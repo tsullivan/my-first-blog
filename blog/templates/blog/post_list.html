@@ -1,13 +1,22 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Tim's Blog</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <title>Tim's Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-    <h1>Tim's Blog</h1>
-    <p>Hi there.</p>
-    <p>It works!</p>
+  <div>
+    <h1>This Blog</h1>
+  </div>
+
+{% for post in posts %}
+<div>
+  <p>published: {{ post.published_date }}</p>
+  <h1><a href="">{{ post.title }}</a></h1>
+  <p>{{ post.text|linebreaksbr }}</p>
+</div>
+{% endfor %}
+
 </body>
 </html>
